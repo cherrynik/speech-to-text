@@ -1,0 +1,26 @@
+{
+  "name": "@audio-to-text/server-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@audio-to-text/server"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/server-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@audio-to-text/server:build",
+          "@audio-to-text/server:serve"
+        ]
+      }
+    }
+  }
+}
